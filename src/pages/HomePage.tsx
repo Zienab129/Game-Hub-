@@ -41,7 +41,7 @@ const HomePage = () => {
     <Grid
       templateAreas={{
         base: `"main"`,
-        lg: `"aside main"`,
+        lg: `"aside main"`, 
       }}
       templateColumns={{
         base: "1fr",

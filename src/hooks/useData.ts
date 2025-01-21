@@ -13,8 +13,8 @@ function useData<T>(
   deps?: any[]
 ) {
   const [data, setData] = useState<T[]>([]);
-  const [error, setError] = useState("");
-  const [isLoading, setLoading] = useState(false);
+  const [error, setError] = useState<string>("");
+  const [isLoading, setLoading] = useState<boolean>(false);
 
   const apiClient = new APIClient<T>(endpoint);
 
@@ -28,7 +28,7 @@ function useData<T>(
           signal: controller.signal,
           ...requestConfig,
         })
-        .then((response) => {
+        .then((response: FetchResponse<T>) => {
           setData(response.results);
           setLoading(false);
         })
