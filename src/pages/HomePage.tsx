@@ -41,18 +41,20 @@ const HomePage = () => {
     <Grid
       templateAreas={{
         base: `"main"`,
-        lg: `"aside main"`, 
+        lg: `"aside main"`,
       }}
       templateColumns={{
         base: "1fr",
-        lg: "250px 1fr",
+        lg: "250px 1fr" as const,
       }}
     >
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
           <GenreList
             selectedGenre={gameQuery.genre}
-            onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+            onSelectGenre={(genre: Genre | null) =>
+              setGameQuery({ ...gameQuery, genre })
+            }
           />
         </GridItem>
       </Show>
