@@ -6,7 +6,7 @@ import GameHeading from "../components/GameHeading";
 import GenreList from "../components/GenreList";
 import PlatformSelector from "../components/PlatformSelector";
 import SortSelector from "../components/SortSelector";
-import { Platform } from "../hooks/useGames";
+import { Platform } from "../entities/Platform";
 import { Genre } from "../hooks/useGenres";
 
 interface GameQuery {
